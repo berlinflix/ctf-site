@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Iron Cipher</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load custom Game of Thrones-style font 'Cinzel' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply the custom font to the body */
+        body {
+            font-family: 'Cinzel', serif;
+            /* Add a subtle texture background, like old parchment or a castle wall */
+            background-image: url('https://www.transparenttextures.com/patterns/dark-denim.png');
+        }
+        
+        /* Custom shadow for a "glowing" effect on text and borders */
+        .text-shadow-gold {
+            text-shadow: 0 0 8px rgba(252, 211, 77, 0.4); /* Tailwind's yellow-400 */
+        }
+        
+        .shadow-gold {
+            box-shadow: 0 0 15px rgba(252, 211, 77, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main content container -->
+    <div class="w-full max-w-3xl mx-auto bg-gray-800 bg-opacity-70 border-2 border-yellow-600 rounded-lg shadow-2xl shadow-gold p-8 md:p-12 text-center backdrop-blur-sm">
+        
+        <!-- Thematic Heading -->
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow-gold">
+            The Iron Cipher
+        </h1>
+
+        <!-- Flavor Text -->
+        <p class="text-lg md:text-xl text-gray-300 mb-6">
+            A raven arrives from the Red Keep, its message sealed with the crown.
+        </p>
+        <p class="text-base md:text-lg text-gray-400 mb-10">
+            The Master of Whispers has laid a challenge. Only those of true cunning may unravel the secrets hidden within the scroll. Prove your worthiness to the realm.
+        </p>
+
+        <!-- CTF Challenge Button -->
+        <button id="openScrollButton"
+                class="bg-red-800 text-yellow-100 border-2 border-yellow-500 
+                       rounded-lg px-8 py-4 text-xl font-bold shadow-lg 
+                       transform transition-all duration-300 ease-in-out
+                       hover:bg-red-700 hover:border-yellow-300 hover:text-white
+                       hover:shadow-xl hover:scale-105
+                       focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75">
+            Unfurl the Raven's Scroll
+        </button>
+
+        <!-- Hidden message for those who inspect the source -->
+        <!-- 
+            A true spy looks in all corners. 
+            But the real clue is not here. 
+            Or is it? 
+            ...No, it's in the scroll. 
+        -->
+
+    </div>
+
+    <script>
+        // Get the button element
+        const openScrollButton = document.getElementById('openScrollButton');
+
+        // Add click event listener
+        openScrollButton.addEventListener('click', () => {
+        
+            try {
+                window.open('ravens_scroll.jss', '_blank');
+            } catch (error) {
+                console.error("Failed to open scroll. Has the Maester misplaced it?", error);
+         
+            }
+        });
+    </script>
+
+</body>
+</html>
+
